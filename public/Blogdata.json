@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "name": [
+            {
+                "Name": "Bed",
+                "img": "https://i.ibb.co/wyckNZ9/second-hand-double-bed-500x500.webp",
+                "location": "Rajshahi",
+                "original-price": 30000,
+                "resale-price": 10000,
+                "using-time": "5 years",
+                "post-time": "12-11-22",
+                "seller-name": "Maliha"
+            },
+            {
+                "Name": "Waredrobe",
+                "img": "https://i.ibb.co/VSZ5FHp/1-d0qpgabjyebsby1fk8ohqw-500x500.webp",
+                "location": "Rajshahi",
+                "original-price": 15000,
+                "resale-price": 5000,
+                "using-time": "2 years",
+                "post-time": "5-11-22",
+                "seller-name": "Amina"
+            },
+            {
+                "Name": "Almirah",
+                "img": "https://i.ibb.co/JvK2xB7/HTB1j-Yf9-UOLa-K1-Rj-SZFxq6ym-PFXa-D.jpg",
+                "location": "Rajshahi",
+                "original-price": 40000,
+                "resale-price": 20000,
+                "using-time": "1 years",
+                "post-time": "23-11-22",
+                "seller-name": "Mahi"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": []
+    },
+    {
+        "id": 2,
+        "name": "bed"
+    }
+]

@@ -10,10 +10,9 @@ const Navbar = () => {
 
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/categories">Categories</Link></li>
+        <li><Link to="/login">Login</Link></li>
 
-        {/* // <li><Link to="/reviews">Reviews</Link></li>
-
-        // <li><Link to="/signup">SignUp</Link></li> */}
+        {/* <li><Link to="/signup">SignUp</Link></li>  */}
     </React.Fragment>
     return (
         <div className="navbar bg-base-100">
