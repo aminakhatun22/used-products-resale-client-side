@@ -8,6 +8,7 @@ import CategoryProduct from '../../Pages/Categories/CategoryProduct/CategoryProd
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login';
 import ErrorElement from '../../Pages/Shared/ErrorElement/ErrorElement';
+import SignUp from '../../Pages/SignUp/SignUp';
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: '/categoryproduct/:id',
                 element: <CategoryProduct></CategoryProduct>
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
             }
         ]
     }
