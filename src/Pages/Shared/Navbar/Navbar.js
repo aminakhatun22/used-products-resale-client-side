@@ -6,7 +6,14 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err));
+    }
+
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
 
@@ -14,7 +21,11 @@ const Navbar = () => {
         <li><Link to="/categories">Categories</Link></li>
         {
             user?.uid ?
-                <li><Link to="/login">LogOut</Link></li>
+                <>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
+                    <li><button onClick={handleLogOut}>LogOut</button></li>
+
+                </>
                 : <li><Link to="/login">Login</Link></li>
         }
 

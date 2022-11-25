@@ -1,19 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUser } = useContext(AuthContext);
+    const [signUpError, setSignUpError] = useState('');
     const handleSignUp = data => {
         console.log(data);
+        setSignUpError('')
         createUser(data?.email, data?.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast('User Created Successfully');
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(err => console.log(err));
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error)
+                setSignUpError(error.message)
+            });
     }
     return (
         <div className='h-[800px] flex justify-center items-center'>
@@ -47,6 +60,9 @@ const SignUp = () => {
 
 
                     <input className='btn bg-orange-400 w-full mt-5 text-white' type="submit" />
+                    <div>
+                        {signUpError && <p className='text-red-500'>{signUpError}</p>}
+                    </div>
                 </form>
                 <p>Already have an account <Link className='text-orange-400' to='/login'>Please login</Link></p>
                 <div className="flex flex-col w-full border-opacity-50">
