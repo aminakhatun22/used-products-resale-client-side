@@ -1,45 +1,110 @@
 [
     {
-        "id": 1,
-        "name": [
-            {
-                "Name": "Bed",
-                "img": "https://i.ibb.co/wyckNZ9/second-hand-double-bed-500x500.webp",
-                "location": "Rajshahi",
-                "original-price": 30000,
-                "resale-price": 10000,
-                "using-time": "5 years",
-                "post-time": "12-11-22",
-                "seller-name": "Maliha"
-            },
-            {
-                "Name": "Waredrobe",
-                "img": "https://i.ibb.co/VSZ5FHp/1-d0qpgabjyebsby1fk8ohqw-500x500.webp",
-                "location": "Rajshahi",
-                "original-price": 15000,
-                "resale-price": 5000,
-                "using-time": "2 years",
-                "post-time": "5-11-22",
-                "seller-name": "Amina"
-            },
-            {
-                "Name": "Almirah",
-                "img": "https://i.ibb.co/JvK2xB7/HTB1j-Yf9-UOLa-K1-Rj-SZFxq6ym-PFXa-D.jpg",
-                "location": "Rajshahi",
-                "original-price": 40000,
-                "resale-price": 20000,
-                "using-time": "1 years",
-                "post-time": "23-11-22",
-                "seller-name": "Mahi"
-            }
-        ]
+        "category_name": "Bed Room",
+        "category_id": 1,
+        "Name": "Bed",
+        "img": "https://i.ibb.co/wyckNZ9/second-hand-double-bed-500x500.webp",
+        "location": "Rajshahi",
+        "original-price": 30000,
+        "resale-price": 10000,
+        "using-time": "5 years",
+        "post-time": "12-11-22",
+        "seller-name": "Maliha"
     },
     {
-        "id": 2,
-        "name": []
+        "category_name": "Bed Room",
+        "category_id": 1,
+        "Name": "Waredrobe",
+        "img": "https://i.ibb.co/VSZ5FHp/1-d0qpgabjyebsby1fk8ohqw-500x500.webp",
+        "location": "Rajshahi",
+        "original-price": 15000,
+        "resale-price": 5000,
+        "using-time": "2 years",
+        "post-time": "5-11-22",
+        "seller-name": "Amina"
     },
     {
-        "id": 2,
-        "name": "bed"
+        "category_name": "Bed Room",
+        "category_id": 1,
+        "Name": "Almirah",
+        "img": "https://i.ibb.co/JvK2xB7/HTB1j-Yf9-UOLa-K1-Rj-SZFxq6ym-PFXa-D.jpg",
+        "location": "Rajshahi",
+        "original-price": 40000,
+        "resale-price": 20000,
+        "using-time": "1 years",
+        "post-time": "23-11-22",
+        "seller-name": "Mahi"
+    },
+    {
+        "category_name": "Daining Room",
+        "category_id": 2,
+        "Name": "Sofa",
+        "img": "https://i.ibb.co/SfXFkHm/buying-second-hand-furniture.jpg",
+        "location": "Rajshahi",
+        "original-price": 50000,
+        "resale-price": 20000,
+        "using-time": "3 month",
+        "post-time": "24-11-22",
+        "seller-name": "Amina"
+    },
+    {
+        "category_name": "Daining Room",
+        "category_id": 2,
+        "Name": "Center Table",
+        "img": "https://i.ibb.co/nrhq3hq/data-coffee-table-vesta-coffee-table-revised-revised-Honey-Finish-Cream-Blossom-front-574x396.jpg",
+        "location": "Rajshahi",
+        "original-price": 7000,
+        "resale-price": 2000,
+        "using-time": "2 years",
+        "post-time": "24-11-22",
+        "seller-name": "Afifa"
+    },
+    {
+        "category_name": "Daining Room",
+        "category_id": 2,
+        "Name": "Flower vase",
+        "img": "https://i.ibb.co/X3rTZqf/download.jpg",
+        "location": "Rajshahi",
+        "original-price": 5000,
+        "resale-price": 1000,
+        "using-time": "1 years",
+        "post-time": "23-11-22",
+        "seller-name": "Amina"
+    },
+    {
+        "category_name": "Office Room",
+        "category_id": 3,
+        "Name": "Desk",
+        "img": "https://i.ibb.co/gZp1RxL/modern-executive-office-table-500x500.webp",
+        "location": "Rajshahi, binodpur",
+        "original-price": 20000,
+        "resale-price": 5000,
+        "using-time": "2 years",
+        "post-time": "25-11-22",
+        "seller-name": "Anika"
+    },
+    {
+        "category_name": "Office Room",
+        "category_id": 3,
+        "Name": "Chair",
+        "img": "https://i.ibb.co/nCdQ3fH/images-2.jpg",
+        "location": "Rajshahi, talaimary",
+        "original-price": 10000,
+        "resale-price": 3000,
+        "using-time": "1 years",
+        "post-time": "25-11-22",
+        "seller-name": "Misha"
+    },
+    {
+        "category_name": "Office Room",
+        "category_id": 3,
+        "Name": "Laptop Table",
+        "img": "https://i.ibb.co/4pd0KYk/Office-tables.jpg",
+        "location": " Rajshahi, Kazla",
+        "original-price": 10000,
+        "resale-price": 2000,
+        "using-time": "2 years",
+        "post-time": "26-11-22",
+        "seller-name": "Afia"
     }
 ]

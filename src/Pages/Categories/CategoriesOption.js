@@ -13,7 +13,7 @@ const CategoriesOption = ({ category }) => {
                 <h2 className="card-title">{name}</h2>
 
                 <div className="card-actions">
-                    <Link to={`/categoryproduct/${category.id}`}><button className='btn bg-orange-400'>See Details</button></Link>
+                    <Link to={`/categoryproduct/${category.category_name}`}><button className='btn bg-orange-400'>See Details</button></Link>
                 </div>
             </div>
         </div >

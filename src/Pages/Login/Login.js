@@ -8,6 +8,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { signIn } = useContext(AuthContext);
+    const { handleGoogleSignIn } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
 
     const location = useLocation();
@@ -28,6 +29,8 @@ const Login = () => {
             });
 
     }
+
+
 
 
     return (
@@ -66,7 +69,7 @@ const Login = () => {
                 <p>New to furnob <Link className='text-orange-400' to='/signup'>Create new account</Link></p>
                 <div className="flex flex-col w-full border-opacity-50">
                     <div className="divider">OR</div>
-                    <button className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
+                    <button onClick={handleSubmit(handleGoogleSignIn)} className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
                 </div>
             </div>
 
