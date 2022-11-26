@@ -4,6 +4,8 @@ import Main from '../../Layout/Main';
 import Blog from '../../Pages/Blog/Blog';
 import CategoriesProducts from '../../Pages/Categories/CategoriesProducts/CategoriesProducts';
 import Category from '../../Pages/Categories/Categoris/Category';
+import AllBuyers from '../../Pages/Dashboard/AllBuyers/AllBuyers';
+import AllSellers from '../../Pages/Dashboard/AllSellers/AllSellers';
 
 import Dashboard from '../../Pages/Dashboard/Dashboard/Dashboard';
 import MyOrders from '../../Pages/Dashboard/Dashboard/MyOrders/MyOrders';
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <MyOrders></MyOrders>
             },
+            {
+                path: '/dashboard/allsellers',
+                element: <AllSellers></AllSellers>
+            },
+            {
+                path: '/dashboard/allbuyers',
+                element: <AllBuyers></AllBuyers>
+            }
 
         ]
     },

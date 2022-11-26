@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const ProductBookingModal = ({ bookedProduct, setBookedProduct }) => {
-    const { Name, seller_name, resale_price, location } = bookedProduct;
+    const { Name, seller_name, resale_price, location, img } = bookedProduct;
     const { user } = useContext(AuthContext);
     const handleOrder = event => {
         event.preventDefault();
@@ -24,6 +24,8 @@ const ProductBookingModal = ({ bookedProduct, setBookedProduct }) => {
             seller_name,
             resale_price,
             location,
+            img,
+            Name,
             location,
             seller_name,
             resale_price
@@ -69,9 +71,14 @@ const ProductBookingModal = ({ bookedProduct, setBookedProduct }) => {
                             <input type="text" placeholder="Type Your Name" defaultValue={user?.displayName} disabled name="name" className="input input-bordered w-full " />
                             <input type="text" placeholder="Type Email Address" defaultValue={user?.email} disabled name="email" className="input input-bordered w-full " />
                             <input type="text" placeholder="Type your Phone" name="phone" className="input input-bordered w-full " />
-                            <input type="text" placeholder="" className="input input-bordered w-full " disabled />
-                            <input type="text" placeholder="" name='resale_price' className="input input-bordered w-full " disabled />
-                            <input type="text" placeholder="" name='location' className="input input-bordered w-full " />
+                            <input type="text" placeholder="Name" name="Name" className="input input-bordered w-full " readOnly />
+
+                            <input type="text" placeholder="seller_name" name="seller_name" className="input input-bordered w-full " readOnly />
+                            <input type="text" placeholder="resale_price" name='resale_price' className="input input-bordered w-full " readOnly />
+                            <input type="text" placeholder="location" name='location' className="input input-bordered w-full " readOnly />
+                            <input type="text" placeholder="img" name='img' className="input input-bordered w-full " readOnly />
+
+
                             <br />
                             <input type="submit" value="submit" className="btn bg-orange-400 w-full" />
 

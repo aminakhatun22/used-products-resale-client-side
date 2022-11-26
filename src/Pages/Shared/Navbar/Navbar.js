@@ -19,7 +19,7 @@ const Navbar = () => {
 
         <li><Link to="/blog">Blog</Link></li>
 
-        <li><Link to="/myorders">My Orders</Link></li>
+
         {
             user?.uid ?
                 <>

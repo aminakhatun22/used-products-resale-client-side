@@ -34,11 +34,11 @@ const MyOrders = () => {
                     <tbody>
 
                         {
-                            orders.map((order, i) => <tr>
-                                <th>{i}</th>
-                                <td>Cy Ganderton</td>
-                                <td>Quality Control Specialist</td>
-                                <td>Blue</td>
+                            orders.map((order, i) => <tr key={order._id}>
+                                <th>{i + 1}</th>
+                                <td>{order.Name}</td>
+                                <td>{order.img}</td>
+                                <td>{order.resale_price}</td>
                                 <td><button className="btn btn-sm">Small</button></td>
                             </tr>)
                         }
