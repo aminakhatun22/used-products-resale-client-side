@@ -5,7 +5,7 @@ import ProductBookingModal from './ProductBookingModal/ProductBookingModal';
 const CategoriesProducts = () => {
     const [products, setProducts] = useState([]);
     const [bookedProduct, setBookedProduct] = useState(null)
-    console.log(products);
+    // console.log(products);
 
 
 
@@ -28,7 +28,9 @@ const CategoriesProducts = () => {
             {
                 bookedProduct &&
                 <ProductBookingModal
-                    bookedProduct={bookedProduct}></ProductBookingModal>
+                    bookedProduct={bookedProduct}
+                    setBookedProduct={setBookedProduct}
+                ></ProductBookingModal>
             }
         </div>
     );

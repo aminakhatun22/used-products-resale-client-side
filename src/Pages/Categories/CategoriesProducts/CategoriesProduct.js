@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CategoriesProduct = ({ product, setBookedProduct }) => {
     const { Name, img, location, original_price, using_time, post_time, seller_name, } = product;
 
@@ -11,12 +12,13 @@ const CategoriesProduct = ({ product, setBookedProduct }) => {
                     <img src={img} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center flex">
-                    <h2 className="card-title">Product:{Name}</h2>
-                    <h2 className="card-title">{seller_name}</h2>
+                    <h2 className="card-title">Product: {Name}</h2>
+                    <h2 className="card-title">Seller: {seller_name}</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div className="card-actions">
 
                         <label onClick={() => setBookedProduct(product)} className="btn bg-orange-500" htmlFor="order-modal" >Book Now</label>
+
                     </div>
                 </div>
             </div>
