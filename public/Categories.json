@@ -1,17 +1,16 @@
 [
     {
         "name": "Bed Room",
-        "category_id": 1,
         "img": "https://i.ibb.co/Q8cfSkv/Adobe-Stock-232812411-Preview.jpg"
     },
     {
         "name": "Daining Room",
-        "category_id": 2,
+        "_id": "6381a46f756c9b35a3fd2894",
         "img": "https://i.ibb.co/dLpyP5w/Adobe-Stock-215284133-Preview.jpg"
     },
     {
         "name": "Office Room",
-        "category_id": 3,
+        "_id": "6381a46f756c9b35a3fd2895",
         "img": "https://i.ibb.co/p33G2fW/Adobe-Stock-130700352-Preview.jpg"
     }
 ]
