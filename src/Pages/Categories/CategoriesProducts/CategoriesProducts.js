@@ -7,7 +7,7 @@ import ProductBookingModal from './ProductBookingModal/ProductBookingModal';
 const CategoriesProducts = () => {
     const [products, setProducts] = useState([]);
     const [bookedProduct, setBookedProduct] = useState(null)
-    // const {user} = useState(AuthContext);
+    // const { user } = useState(AuthContext);
     // console.log(products);
 
 
@@ -21,9 +21,9 @@ const CategoriesProducts = () => {
 
     }, [])
 
-    // const {data: product = []} = useQuery({
+    // const { data: product = [] } = useQuery({
     //     queryKey: ['categoriesProduct', user?.id],
-    //     queryFn: async () =>{
+    //     queryFn: async () => {
     //         const res = await fetch(`https://quality-consoles-server.vercel.app/categoriesProduct?id=${user?.id}`);
     //         const data = await res.json();
     //         return data;

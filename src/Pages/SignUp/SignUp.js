@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -8,8 +9,13 @@ const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
+    
 
     const navigate = useNavigate();
+    const onSubmit = data => {
+        const newData = { ...data, role: 'seller' }
+    };
+
     const handleSignUp = data => {
         console.log(data);
         setSignUpError('')
@@ -23,7 +29,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.role);
 
                     })
                     .catch(err => console.log(err));
@@ -73,11 +79,16 @@ const SignUp = () => {
                         {errors.password && <p className="text-red-600">{errors.password?.message}</p>}
 
                     </div>
-                    <select className='w-80 p-3 mt-3' {...register("category", { required: true })}>
-                        <option value="">Select</option>
-                        <option value="A">User</option>
-                        <option value="B">Seller</option>
+                    <select className='w-80 p-3 mt-3' {...register("role", { required: "User" })}>
+                        {/* <option value="">Select</option> */}
+                        <option value="user">User</option>
+                        <option value="seller" onSubmit={onSubmit}>Seller</option>
                     </select>
+                    {/* <select value="user" name="role" className="select select-bordered w-full ">
+                        <option>User</option>
+                        <option onSubmit={onSubmit}>Seller</option>
+
+                    </select> */}
 
 
                     <input className='btn bg-orange-400 w-full mt-5 text-white' type="submit" />
