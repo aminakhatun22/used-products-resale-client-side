@@ -7,7 +7,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createUser, updateUser } = useContext(AuthContext);
+    const { createUser, updateUser, handleGoogleSignIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
 
 
@@ -80,15 +80,11 @@ const SignUp = () => {
 
                     </div>
                     <select className='w-80 p-3 mt-3' {...register("role", { required: "User" })}>
-                        {/* <option value="">Select</option> */}
+
                         <option value="user">User</option>
                         <option value="seller" onSubmit={onSubmit}>Seller</option>
                     </select>
-                    {/* <select value="user" name="role" className="select select-bordered w-full ">
-                        <option>User</option>
-                        <option onSubmit={onSubmit}>Seller</option>
 
-                    </select> */}
 
 
                     <input className='btn bg-orange-400 w-full mt-5 text-white' type="submit" />
@@ -99,7 +95,7 @@ const SignUp = () => {
                 <p>Already have an account <Link className='text-orange-400' to='/login'>Please login</Link></p>
                 <div className="flex flex-col w-full border-opacity-50">
                     <div className="divider">OR</div>
-                    <button className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
+                    <button onClick={handleGoogleSignIn} className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
                 </div>
             </div>
 

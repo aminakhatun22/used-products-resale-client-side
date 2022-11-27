@@ -7,9 +7,9 @@ const AdminRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const [isAdmin, isAdminLoading] = useAdmin(user?.email);
     const location = useLocation();
-    if (loading || isAdminLoading) {
-        return <progress className="progress bg-orange-300 w-56"></progress>
-    }
+    // if (loading || isAdminLoading) {
+    //     return <progress className="progress bg-orange-300 w-56"></progress>
+    // }
     if (user && isAdmin) {
         return children;
     }
