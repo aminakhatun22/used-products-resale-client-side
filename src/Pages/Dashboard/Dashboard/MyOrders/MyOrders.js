@@ -6,7 +6,7 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext);
     // console.log(user);
 
-    const url = `http://localhost:5000/orders?email=${user?.email}`;
+    const url = `http://localhost:5000/pro?email=${user?.email}`;
 
 
     const { data: orders = [] } = useQuery({
@@ -26,6 +26,7 @@ const MyOrders = () => {
                     <thead>
                         <tr>
 
+                            <th>No</th>
                             <th>Title</th>
                             <th>Image</th>
                             <th>Price</th>
@@ -38,9 +39,9 @@ const MyOrders = () => {
                             orders.map((order, i) => <tr key={order._id}>
                                 <th>{i + 1}</th>
                                 <td>{order.Name}</td>
-                                <td><img className='circle'>{order.img}</img></td>
+                                <td><img className='avatar rounded-full w-20' src={order.img} alt="" /></td>
                                 <td>{order.resale_price}</td>
-                                <td><button className="btn btn-sm">Small</button></td>
+                                <td><button className="btn btn-sm">Pay</button></td>
                             </tr>)
                         }
 
