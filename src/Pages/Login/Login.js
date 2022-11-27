@@ -52,11 +52,7 @@ const Login = () => {
                         {errors.password && <p className="text-red-600">{errors.password?.message}</p>}
                         <label className="label"><span className="label-text">Forget Password</span> </label>
                     </div>
-                    <select className='w-80 p-3' {...register("category", { required: true })}>
-                        <option value="">Select</option>
-                        <option value="A">User</option>
-                        <option value="B">Seller</option>
-                    </select>
+
 
 
                     <input className='btn bg-orange-400 w-full mt-5 text-white' type="submit" />
@@ -69,7 +65,7 @@ const Login = () => {
                 <p>New to furnob <Link className='text-orange-400' to='/signup'>Create new account</Link></p>
                 <div className="flex flex-col w-full border-opacity-50">
                     <div className="divider">OR</div>
-                    <button onClick={handleSubmit(handleGoogleSignIn)} className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
+                    <button onClick={handleGoogleSignIn} className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
                 </div>
             </div>
 

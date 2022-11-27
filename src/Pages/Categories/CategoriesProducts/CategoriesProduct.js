@@ -1,7 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-const CategoriesProduct = ({ product, setBookedProduct }) => {
+const CategoriesProduct = ({ product, setBookedProduct, setWishList }) => {
+
+
+
+
     const { Name, img, location, original_price, using_time, post_time, seller_name, } = product;
 
     // {"_id":"6381a72a756c9b35a30000ba","Name":"Bed","img":"https://i.ibb.co/wyckNZ9/second-hand-double-bed-500x500.webp","location":"Rajshahi","original-price":30000,"resale-price":10000,"using-time":"5 years","post-time":"12-11-22","seller-name":"Maliha","id":"6381a46f756c9b35a3fd2893"},
@@ -15,9 +20,10 @@ const CategoriesProduct = ({ product, setBookedProduct }) => {
                     <h2 className="card-title">Product: {Name}</h2>
                     <h2 className="card-title">Seller: {seller_name}</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions">
+                    <div className="card-actions flex">
 
                         <label onClick={() => setBookedProduct(product)} className="btn bg-orange-500" htmlFor="order-modal" >Book Now</label>
+                        <Link to="/dashboard/mywishlist"><button onClick={setWishList(product)} className='btn btn-info'>WishList</button></Link>
 
                     </div>
                 </div>

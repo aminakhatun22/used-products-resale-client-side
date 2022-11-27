@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const MyOrders = () => {
-    const { user } = useState(AuthContext);
+    const { user } = useContext(AuthContext);
+    // console.log(user);
 
     const url = `http://localhost:5000/orders?email=${user?.email}`;
 

@@ -1,20 +1,46 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import MyWishList from '../../Dashboard/Dashboard/MyWishList/MyWishList';
 import CategoriesProduct from './CategoriesProduct';
 import ProductBookingModal from './ProductBookingModal/ProductBookingModal';
 
 const CategoriesProducts = () => {
     const [products, setProducts] = useState([]);
     const [bookedProduct, setBookedProduct] = useState(null)
-    // const { user } = useState(AuthContext);
+    // wishlist
+    const [wishList, setWishList] = useState(null);
+
+    // fetch('http://localhost:5000/wishList', {
+    //     method: 'POST',
+    //     headers: {
+    //         'content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(wishlist)
+    // })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         if (data.acknowledged
+    //         ) {
+    //             setWishList(null);
+    //             toast.success('booking confirmed');
+    //         }
+
+    //     })
+    // const { user } = useContext(AuthContext);
+    // console.log(user);
+
+
     // console.log(products);
+    // -------------wishlist-----------
 
 
 
 
     useEffect(() => {
-        // fetch(`https://quality-consoles-server.vercel.app/categoriesProduct?id=${user?.id}`)
+        // fetch(`https://quality-consoles-server.vercel.app/categoriesProduct?id=${user?._id}`)
         fetch('https://quality-consoles-server.vercel.app/categoriesProduct')
             .then(res => res.json())
             .then(data => setProducts(data))
@@ -22,9 +48,9 @@ const CategoriesProducts = () => {
     }, [])
 
     // const { data: product = [] } = useQuery({
-    //     queryKey: ['categoriesProduct', user?.id],
+    //     queryKey: ['categoriesProduct', user.uid],
     //     queryFn: async () => {
-    //         const res = await fetch(`https://quality-consoles-server.vercel.app/categoriesProduct?id=${user?.id}`);
+    //         const res = await fetch(`https://quality-consoles-server.vercel.app/categoriesProduct?id=${user.uid}`);
     //         const data = await res.json();
     //         return data;
     //     }
@@ -37,7 +63,8 @@ const CategoriesProducts = () => {
                 {
                     products.map(product => <CategoriesProduct key={product._id}
                         product={product}
-                        setBookedProduct={setBookedProduct}></CategoriesProduct>)
+                        setBookedProduct={setBookedProduct}
+                        setWishList={setWishList}></CategoriesProduct>)
                 }
             </div>
             {
@@ -47,6 +74,16 @@ const CategoriesProducts = () => {
                     setBookedProduct={setBookedProduct}
                 ></ProductBookingModal>
             }
+
+            {/* {
+                wishList &&
+                <MyWishList
+                    wishList={wishList}
+                    setWishList={setWishList}>
+
+                </MyWishList>
+
+            } */}
         </div>
     );
 };

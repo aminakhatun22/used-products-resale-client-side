@@ -53,6 +53,8 @@ const ProductBookingModal = ({ bookedProduct, setBookedProduct }) => {
 
 
 
+
+
     }
     return (
         <div>
@@ -86,6 +88,7 @@ const ProductBookingModal = ({ bookedProduct, setBookedProduct }) => {
                     </form>
                 </div>
             </div>
+
         </div>
     );
 };
