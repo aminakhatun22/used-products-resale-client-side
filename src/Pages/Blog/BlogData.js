@@ -25,7 +25,13 @@ const BlogData = () => {
     return (
         <div className='grid grid-cols-2 sm:grid-cols-1'>
             {
-                blogData.map((data, i) => <Blog></Blog>)
+                blogData.map((data, i) => <div className="card w-96 bg-base-100 shadow-xl">
+                    <div className="card-body">
+                        <h2 className="card-title">Question: {data.Question}</h2>
+                        <p className='text-white'>Answer: {data.Answer}</p>
+
+                    </div>
+                </div>)
             }
         </div>
     );

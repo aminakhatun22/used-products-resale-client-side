@@ -1,6 +1,8 @@
 import React from 'react';
 import Banner from '../../Banner/Banner';
 import Categories from '../../Categories/Categoris/Categories';
+import AdvertisedItems from '../AdvertisedItem/AdvertisedItems';
+import ExtraSection from '../ExtraSection/ExtraSection';
 
 
 const Home = () => {
@@ -8,6 +10,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Categories></Categories>
+            <AdvertisedItems></AdvertisedItems>
+            <ExtraSection></ExtraSection>
         </div>
     );
 };

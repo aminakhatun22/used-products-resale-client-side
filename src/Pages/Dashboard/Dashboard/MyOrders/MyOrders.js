@@ -6,7 +6,7 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext);
     // console.log(user);
 
-    const url = `http://localhost:5000/pro?email=${user?.email}`;
+    const url = `http://localhost:5000/orders?email=${user?.email}`;
 
 
     const { data: orders = [] } = useQuery({
@@ -20,34 +20,25 @@ const MyOrders = () => {
     return (
         <div>
             <h3 className='text-3xl mb-5'>My Orders</h3>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
-                    {/* <!-- head --> */}
-                    <thead>
-                        <tr>
-
-                            <th>No</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Price</th>
-                            <th>Pay</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        {
-                            orders.map((order, i) => <tr key={order._id}>
-                                <th>{i + 1}</th>
-                                <td>{order.Name}</td>
-                                <td><img className='avatar rounded-full w-20' src={order.img} alt="" /></td>
-                                <td>{order.resale_price}</td>
-                                <td><button className="btn btn-sm">Pay</button></td>
-                            </tr>)
-                        }
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2">
 
 
-                    </tbody>
-                </table>
+                {
+                    orders.map((order, i) => <div className="card w-96 bg-base-100 shadow-xl  ">
+                        <figure><img src={order.img} alt="Shoes" /></figure>
+                        <div className="card-body ">
+                            <h2 className="card-title">
+                                {order.Name}
+                                <div className="badge badge-secondary btn">pay</div>
+                                <div className="badge badge-secondary">${order.resale_price}</div>
+
+                            </h2>
+
+
+                        </div>
+                    </div>)
+
+                }
             </div>
         </div>
     );
