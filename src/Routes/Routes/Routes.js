@@ -10,6 +10,7 @@ import AddAProduct from '../../Pages/Dashboard/Dashboard/AddAProduct/AddAProduct
 
 import Dashboard from '../../Pages/Dashboard/Dashboard/Dashboard';
 import MyOrders from '../../Pages/Dashboard/Dashboard/MyOrders/MyOrders';
+import MyProducts from '../../Pages/Dashboard/Dashboard/MyProducts/MyProducts';
 import MyWishList from '../../Pages/Dashboard/Dashboard/MyWishList/MyWishList';
 
 
@@ -19,6 +20,7 @@ import Login from '../../Pages/Login/Login';
 import ErrorElement from '../../Pages/Shared/ErrorElement/ErrorElement';
 import SignUp from '../../Pages/SignUp/SignUp';
 import AdminRoute from '../AdminRout/AdminRoute';
+import BuyersRoute from '../BuyersRoute';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
@@ -42,7 +44,7 @@ const router = createBrowserRouter([
 
             {
                 path: '/category/:id',
-                // loader: ({ params }) => fetch(`http://localhost:5000/ct/${params.id} `),
+
                 loader: ({ params }) =>
                     fetch(`http://localhost:5000/categoriesProduct/${params.id}`),
                 element: <PrivateRoute><CategoriesProducts></CategoriesProducts></PrivateRoute>
@@ -61,7 +63,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
             {
-                path: '/dashboard',
+                path: '/dashboard/myorders',
                 element: <MyOrders></MyOrders>
             },
             {
@@ -84,6 +86,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/mywishlist',
                 element: <MyWishList></MyWishList>
+            },
+            {
+                path: '/dashboard/myproducts',
+                element: <MyProducts></MyProducts>
             }
 
         ]

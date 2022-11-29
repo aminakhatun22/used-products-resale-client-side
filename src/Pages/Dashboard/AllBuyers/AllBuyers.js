@@ -8,63 +8,44 @@ const AllBuyers = () => {
     const { user } = useContext(AuthContext);
     // console.log(user);
 
-    const url = 'http://localhost:5000/users';
+    const url = 'http://localhost:5000/allbuyers';
 
 
     const { data: users = [], refetch } = useQuery({
-        queryKey: ['users'],
+        queryKey: ['buyers'],
         queryFn: async () => {
             const res = await fetch(url);
             const data = await res.json();
             return data;
         }
     })
-    const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
-            method: 'PUT'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0)
-                    toast.success('Make admin successfully')
-                refetch()
-            })
-    }
+
     return (
         <div>
-            <h3 className='text-3xl mb-5'>All Buyers</h3>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
-                    {/* <!-- head --> */}
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Email</th>
-                            <th>Name</th>
-                            <th>Delete</th>
-                            <th>Make Admin</th>
-                            <th>Verify</th>
+            <h3 className='text-3xl mb-5 text-pink-500 text-center mt-10'>All Buyers</h3>
 
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 mt-10 mb-10 ml-10 mr-10 p-7  '>
+                {
+                    users.map(user => <div className="card w-96 bg-base-100 shadow-xl ">
 
-                        {
-                            users.map((user, i) => <tr key={i}>
-                                <th>{i + 1}</th>
-                                <td>{user.email}</td>
-                                <td>{user.name}</td>
-                                <td><button className="btn btn-sm">Delete</button></td>
-                                <td>{user.category !== 'admin' && <button onClick={() => handleMakeAdmin(user._id)} className="btn btn-sm">Make Admin</button>}</td>
-                                <td><button className="btn btn-sm">Small</button></td>
-                            </tr>)
-                        }
+                        <div className="card-body border  rounded-lg border-pink-500">
+                            <h2 className="card-title">
+                                {user.name}
+                                <div className="badge badge-secondary">{user.email}</div>
+                            </h2>
 
+                            <div className="card-actions justify-end">
+                                <div className="badge badge-outline btn">Delete</div>
+                                <div className="badge badge-outline btn">Verify</div>
+                            </div>
+                        </div>
+                    </div>)
+                }
 
-                    </tbody>
-                </table>
             </div>
+
+
+
         </div >
     );
 };

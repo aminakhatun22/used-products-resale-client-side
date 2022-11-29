@@ -4,6 +4,7 @@ import { AuthContext } from '../../../../Contexts/AuthProvider';
 
 const MyOrders = () => {
     const { user } = useContext(AuthContext);
+    console.log(user?.email);
     // console.log(user);
 
     const url = `http://localhost:5000/orders?email=${user?.email}`;
@@ -25,7 +26,7 @@ const MyOrders = () => {
 
                 {
                     orders.map((order, i) => <div className="card w-96 bg-base-100 shadow-xl  ">
-                        <figure><img src={order.img} alt="Shoes" /></figure>
+                        <figure><img src={order.img} alt="" /></figure>
                         <div className="card-body ">
                             <h2 className="card-title">
                                 {order.Name}

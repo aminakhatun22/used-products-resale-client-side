@@ -9,15 +9,28 @@ const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUser, handleGoogleSignIn } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
+    const [googleRegisterError, setGoogleRegisterError] = useState('');
 
 
     const navigate = useNavigate();
     const onSubmit = data => {
         const newData = { ...data, role: 'seller' }
     };
+    const handleGoogle = () => {
+        handleGoogleSignIn()
+            .then(result => {
+                const user = result.user;
+
+                saveUser(user?.displayName, user.email, 'user')
+            })
+            .catch(error => {
+
+                setGoogleRegisterError(error.message)
+            });
+    }
 
     const handleSignUp = data => {
-        console.log(data);
+
         setSignUpError('')
         createUser(data?.email, data?.password)
             .then(result => {
@@ -52,6 +65,7 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log("save user", data);
+
                 navigate('/');
             })
     }
@@ -81,6 +95,8 @@ const SignUp = () => {
                     </div>
                     <select className='w-80 p-3 mt-3' {...register("role", { required: "User" })}>
 
+                        {/* <option value="user">Bed</option>
+                        <option value="user">User</option> */}
                         <option value="user">User</option>
                         <option value="seller" onSubmit={onSubmit}>Seller</option>
                     </select>
@@ -95,7 +111,7 @@ const SignUp = () => {
                 <p>Already have an account <Link className='text-orange-400' to='/login'>Please login</Link></p>
                 <div className="flex flex-col w-full border-opacity-50">
                     <div className="divider">OR</div>
-                    <button onClick={handleGoogleSignIn} className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
+                    <button onClick={handleGoogle} className='btn bg-orange-400 text-white'>CONTINUE WITH GOOGLE</button>
                 </div>
             </div>
 

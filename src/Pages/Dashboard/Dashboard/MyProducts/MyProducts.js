@@ -1,12 +1,11 @@
 import React from 'react';
 
-const MyWishList = () => {
-
+const MyProducts = () => {
     return (
         <div>
-            <h4>wish</h4>
+            <h2>mp</h2>
         </div>
     );
 };
 
-export default MyWishList;
+export default MyProducts;

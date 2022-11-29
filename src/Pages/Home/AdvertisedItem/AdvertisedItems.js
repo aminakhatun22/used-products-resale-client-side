@@ -11,6 +11,7 @@ const AdvertisedItems = () => {
         fetch('https://quality-consoles-server.vercel.app/categoriesProduct')
             .then(res => res.json())
             .then(data => setAdvertisedItem(data))
+
     }, [])
     return (
         <section className='mt-10'>

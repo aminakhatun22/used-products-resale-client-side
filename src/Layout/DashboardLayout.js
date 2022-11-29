@@ -1,57 +1,13 @@
-// import React, { useContext } from 'react';
-// import { Link, Outlet } from 'react-router-dom';
-// import { AuthContext } from '../Contexts/AuthProvider';
-// import useAdmin from '../Hooks/useAdmin/useAdmin';
-// import Navbar from '../Pages/Shared/Navbar/Navbar';
 
-// const DashboardLayout = () => {
-//     const { user } = useContext(AuthContext);
-//     const [isAdmin] = useAdmin(user?.email)
-//     return (
-//         <div>
-//             <Navbar></Navbar>
-//             <div className="drawer drawer-mobile">
-//                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-//                 <div className="drawer-content ">
-//                     {/* <!-- Page content here --> */}
-//                     <Outlet></Outlet>
-
-
-
-//                 </div>
-//                 <div className="drawer-side">
-//                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-//                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-//                         {/* <!-- Sidebar content here --> */}
-//                         <Link to="/dashboard">My Orders</Link>
-//                         <Link to="/dashboard/allsellers">All Seller</Link>
-//                         <Link to='/dashboard/allbuyers'>All Buyers</Link>
-//                         <Link to='/dashboard/addproduct'>Add A Product</Link>
-//                         <Link to='/dashboard/mywishlist'>My WishList</Link>
-
-//                         {/* {
-//                             isAdmin && <>
-//                                 <Link to="/dashboard/allsellers">All Seller</Link>
-//                                 <Link to='/dashboard/allbuyers'>All Buyers</Link>
-
-//                             </>
-//                         } */}
-
-//                     </ul>
-
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-
-// export default DashboardLayout;
 
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
+
+
 const DashboardLayout = () => {
+
+
     return (
         <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -59,7 +15,7 @@ const DashboardLayout = () => {
                 {/* <!-- Navbar --> */}
                 <div className="w-full navbar bg-base-300">
                     <div className="flex-none lg:hidden">
-                        <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+                        <label htmlFor="my-drawer-3" className=" drawer-overlay btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </label>
                     </div>
@@ -67,11 +23,18 @@ const DashboardLayout = () => {
                     <div className="flex-none hidden lg:block">
                         <ul className="menu menu-horizontal">
                             {/* <!-- Navbar menu content here --> */}
-                            <li><Link to="/dashboard">My Orders</Link></li>
+                            <li><Link to="/">Home</Link></li>
+
+                            <li><Link to="/dashboard/myorders">My Orders</Link></li>
+
                             <li><Link to="/dashboard/allsellers">All Sellers</Link></li>
                             <li> <Link to='/dashboard/allbuyers'>All Buyers</Link></li>
+
+
                             <li> <Link to='/dashboard/addproduct'>Add A Product</Link></li>
                             <li>  <Link to='/dashboard/mywishlist'>My WishList</Link></li>
+                            <li>  <Link to='/dashboard/myproducts'>My Products</Link></li>
+
 
                         </ul>
                     </div>
@@ -81,9 +44,10 @@ const DashboardLayout = () => {
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
-                <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
+                <label htmlFor="my-drawer-3" className="drawer-overlay btn btn-ghost btn-square"></label>
                 <ul className="menu p-4 w-80 bg-base-100">
                     {/* <!-- Sidebar content here --> */}
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/dashboard">My Orders</Link></li>
                     <li><Link to="/dashboard/allsellers">All Sellers</Link></li>
                     <li> <Link to='/dashboard/allbuyers'>All Buyers</Link></li>
@@ -93,7 +57,7 @@ const DashboardLayout = () => {
                 </ul>
 
             </div>
-        </div>
+        </div >
     );
 };
 
