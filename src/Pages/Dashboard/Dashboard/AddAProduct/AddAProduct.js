@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../../../Contexts/AuthProvider';
-import Loading from '../../../Shared/Loading/Loading';
+
 
 const AddAProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -24,14 +24,15 @@ const AddAProduct = () => {
             title: data.name,
             email: data.email,
             phone: data.phone,
-            location: data.location,
+
             location: data.location,
             resale: data.resale,
             category: data.category,
             purchase: data.purchase,
             description: data.description,
             price: data.price,
-            condition: data.condition
+            condition: data.condition,
+            photo: data.image
 
 
 
@@ -62,12 +63,8 @@ const AddAProduct = () => {
 
 
     }
-    // const handleAddProduct = data => {
-    //     console.log(data);
-    // }
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
+
+
     return (
 
         <div className='h-[800px] flex justify-center items-center mt-44'>
@@ -153,12 +150,9 @@ const AddAProduct = () => {
                         <select
                             {...register('category')}
                             className="select input-bordered w-full max-w-xs">
-                            {/* {
-                                categories.map(category => <option
-                                    key={category._id}
-                                    value={category.name}
-                                >{category.name}</option>)
-                            } */}
+                            <option>Bed Room</option>
+                            <option>Office Room</option>
+                            <option>Daining Room</option>
 
 
                         </select>

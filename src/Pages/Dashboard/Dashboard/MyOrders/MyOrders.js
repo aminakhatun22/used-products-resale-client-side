@@ -20,7 +20,7 @@ const MyOrders = () => {
     })
     return (
         <div>
-            <h3 className='text-3xl mb-5'>My Orders</h3>
+            <h3 className='text-3xl mb-5 text-center mt-10 mb-10 text-orange-500'>My Orders</h3>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2">
 
 
