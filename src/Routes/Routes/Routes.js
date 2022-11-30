@@ -19,9 +19,12 @@ import Login from '../../Pages/Login/Login';
 
 import ErrorElement from '../../Pages/Shared/ErrorElement/ErrorElement';
 import SignUp from '../../Pages/SignUp/SignUp';
-import AdminRoute from '../AdminRout/AdminRoute';
-import BuyersRoute from '../BuyersRoute';
+import AdminRoute from '../AdminRoute';
+
+
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import UserRoute from '../UserRoute';
+import SellerRoute from './SellerRoute';
 
 const router = createBrowserRouter([
     {
@@ -64,23 +67,25 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/myorders',
-                element: <MyOrders></MyOrders>
+                element: <UserRoute><MyOrders></MyOrders></UserRoute>
+
             },
             {
                 path: '/dashboard/allsellers',
-                element: <AllSellers></AllSellers>
+                element: <AdminRoute> <AllSellers></AllSellers></AdminRoute>
             },
 
             {
                 path: '/dashboard/allbuyers',
-                // element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
-                element: <AllBuyers></AllBuyers>
+
+                element: <AdminRoute> <AllBuyers></AllBuyers></AdminRoute>
 
             },
 
             {
                 path: '/dashboard/addproduct',
-                element: <AddAProduct></AddAProduct>
+                element: <SellerRoute><AddAProduct></AddAProduct></SellerRoute>
+
             },
 
             {
@@ -89,7 +94,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/myproducts',
-                element: <MyProducts></MyProducts>
+                element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
+
             }
 
         ]
