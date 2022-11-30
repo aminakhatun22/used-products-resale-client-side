@@ -5,7 +5,7 @@ const useUser = email => {
     const [isUserLoading, setIsUserLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/user/${email}`)
+            fetch(`https://quality-consoles-server.vercel.app/users/user/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

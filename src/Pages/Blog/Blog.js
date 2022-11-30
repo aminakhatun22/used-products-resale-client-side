@@ -43,27 +43,6 @@ const Blog = () => {
     );
 };
 
-// export default Blog;
 
-// import React from 'react';
-// import BlogData from './BlogData';
-
-// const Blog = ({ data }) => {
-//     const { Question, Answer } = data;
-//     return (
-//         <div>
-//             <BlogData></BlogData>
-//         </div>
-
-//         // <div className="card w-96 bg-base-100 shadow-xl">
-//         //     <div className="card-body">
-//         //         <h2 className="card-title">Question: {Question}</h2>
-//         //         <p className='text-white'>Answer: {Answer}</p>
-
-//         //     </div>
-//         // </div>
-//     );
-
-// };
 
 export default Blog;

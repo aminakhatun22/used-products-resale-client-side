@@ -33,7 +33,7 @@ const ProductBookingModal = ({ bookedProduct, setBookedProduct }) => {
 
         }
         // console.log(order);
-        fetch('http://localhost:5000/orders', {
+        fetch('https://quality-consoles-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

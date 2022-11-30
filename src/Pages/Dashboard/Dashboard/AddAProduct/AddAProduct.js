@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { type } from '@testing-library/user-event/dist/type';
 import { data } from 'autoprefixer';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
@@ -24,22 +25,23 @@ const AddAProduct = () => {
             title: data.name,
             email: data.email,
             phone: data.phone,
-
+            condition: data.condition,
             location: data.location,
             resale: data.resale,
             category: data.category,
             purchase: data.purchase,
             description: data.description,
-            price: data.price,
-            condition: data.condition,
+            price: data.original,
+            product: data.condition,
             photo: data.image
+
 
 
 
 
         }
         console.log(product);
-        fetch('http://localhost:5000/products', {
+        fetch('https://quality-consoles-server.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -89,28 +91,28 @@ const AddAProduct = () => {
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Product Name</span></label>
-                        <input type="text" {...register("product_name", {
+                        <input type="text" {...register("product", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text"> Original Price</span></label>
-                        <input type="text" {...register("original_price", {
+                        <input type="text" {...register("original ", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Resale Price</span></label>
-                        <input type="text" {...register("resale_price", {
+                        <input type="text" {...register("resale ", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Condition Type</span></label>
-                        <input type="text" {...register("condition type", {
+                        <input type="text" {...register("condition ", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
@@ -131,7 +133,7 @@ const AddAProduct = () => {
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Purchase Time</span></label>
-                        <input type="text" {...register("purchase_time", {
+                        <input type="text" {...register("purchase", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}

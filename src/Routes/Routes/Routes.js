@@ -49,7 +49,7 @@ const router = createBrowserRouter([
                 path: '/category/:id',
 
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/categoriesProduct/${params.id}`),
+                    fetch(`https://quality-consoles-server.vercel.app/categoriesProduct/${params.id}`),
                 element: <PrivateRoute><CategoriesProducts></CategoriesProducts></PrivateRoute>
             },
 

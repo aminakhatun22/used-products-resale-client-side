@@ -7,7 +7,7 @@ const MyOrders = () => {
     console.log(user?.email);
     // console.log(user);
 
-    const url = `http://localhost:5000/orders?email=${user?.email}`;
+    const url = `https://quality-consoles-server.vercel.app/orders?email=${user?.email}`;
 
 
     const { data: orders = [] } = useQuery({
