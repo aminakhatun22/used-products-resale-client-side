@@ -1,10 +1,10 @@
-import { useQuery } from '@tanstack/react-query';
-import { type } from '@testing-library/user-event/dist/type';
+
+
 import { data } from 'autoprefixer';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../../../Contexts/AuthProvider';
 
@@ -31,9 +31,9 @@ const AddAProduct = () => {
             category: data.category,
             purchase: data.purchase,
             description: data.description,
-            price: data.original,
-            product: data.condition,
-            photo: data.image
+            price: data.price,
+            product: data.product,
+
 
 
 
@@ -98,21 +98,21 @@ const AddAProduct = () => {
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text"> Original Price</span></label>
-                        <input type="text" {...register("original ", {
+                        <input type="text" {...register("price", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Resale Price</span></label>
-                        <input type="text" {...register("resale ", {
+                        <input type="text" {...register("resale", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Condition Type</span></label>
-                        <input type="text" {...register("condition ", {
+                        <input type="text" {...register("condition", {
                             required: true
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
@@ -159,13 +159,7 @@ const AddAProduct = () => {
 
                         </select>
                     </div>
-                    <div className="form-control w-full max-w-xs">
-                        <label className="label"> <span className="label-text">Photo</span></label>
-                        <input type="file" {...register("image", {
-                            required: "Photo is Required"
-                        })} className="input input-bordered w-full max-w-xs" />
-                        {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
-                    </div>
+
                     <input className='btn btn-primary w-full mt-4' value="Add Product" type="submit" />
                 </form>
             </div>

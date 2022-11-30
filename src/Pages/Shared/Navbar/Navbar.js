@@ -43,7 +43,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <img className='object-scale-down h-20 w-46 rounded' src={navIcon}></img>
+                <img className='object-scale-down h-20 w-46 rounded' src={navIcon} alt=""></img>
                 <Link className="btn btn-ghost normal-case text-xl"><span className='text-orange-500 text-4xl'>Furnob</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">

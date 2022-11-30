@@ -11,9 +11,7 @@ const ProductBookingModal = ({ bookedProduct, setBookedProduct }) => {
         const name = form.name.value;
         const email = form.email.value;
         const phone = form.phone.value;
-        // const seller_name = form.seller_name.value;
-        // const resale_price = form.resale_price.value;
-        // const location = form.location.value;
+
 
 
 

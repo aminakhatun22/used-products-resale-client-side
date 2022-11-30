@@ -1,8 +1,9 @@
 <!-- -----------------------Project Details------------------- -->
 Client side repo link: https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-aminakhatun22
+Server side repo link: 
 
-Live side repo link: https://furnob-client.web.app
-server link: https://quality-consoles-server.vercel.app
+Live side  link: https://furnob-client.web.app
+server deploy  link: https://quality-consoles-server.vercel.app
 admin email: <jomu@na.com>
 admin_pass: <123456>
 

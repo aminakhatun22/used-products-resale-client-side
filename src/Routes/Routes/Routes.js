@@ -3,12 +3,12 @@ import DashboardLayout from '../../Layout/DashboardLayout';
 import Main from '../../Layout/Main';
 import Blog from '../../Pages/Blog/Blog';
 import CategoriesProducts from '../../Pages/Categories/CategoriesProducts/CategoriesProducts';
-import Category from '../../Pages/Categories/Categoris/Category';
+
 import AllBuyers from '../../Pages/Dashboard/AllBuyers/AllBuyers';
 import AllSellers from '../../Pages/Dashboard/AllSellers/AllSellers';
 import AddAProduct from '../../Pages/Dashboard/Dashboard/AddAProduct/AddAProduct';
 
-import Dashboard from '../../Pages/Dashboard/Dashboard/Dashboard';
+
 import MyOrders from '../../Pages/Dashboard/Dashboard/MyOrders/MyOrders';
 import MyProducts from '../../Pages/Dashboard/Dashboard/MyProducts/MyProducts';
 import MyWishList from '../../Pages/Dashboard/Dashboard/MyWishList/MyWishList';
